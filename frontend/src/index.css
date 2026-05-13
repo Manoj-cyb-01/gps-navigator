@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Outfit', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/60 shadow-card rounded-2xl;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5;
+  }
+
+  .btn-primary {
+    @apply bg-nav-600 text-white rounded-xl px-5 py-2.5 font-medium text-sm
+           hover:bg-nav-700 active:scale-95 transition-all duration-150
+           shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-nav-700 border border-nav-200 rounded-xl px-5 py-2.5 font-medium text-sm
+           hover:bg-nav-50 active:scale-95 transition-all duration-150
+           shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-danger {
+    @apply bg-red-50 text-red-600 border border-red-200 rounded-xl px-4 py-2 font-medium text-sm
+           hover:bg-red-100 active:scale-95 transition-all duration-150;
+  }
+
+  .btn-mint {
+    @apply bg-mint-500 text-white rounded-xl px-5 py-2.5 font-medium text-sm
+           hover:bg-mint-600 active:scale-95 transition-all duration-150
+           shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-slate-200 rounded-xl px-4 py-2.5 text-sm
+           focus:outline-none focus:ring-2 focus:ring-nav-400 focus:border-transparent
+           placeholder:text-slate-400 transition-all duration-150;
+  }
+
+  .select-field {
+    @apply input-field appearance-none cursor-pointer;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-blue {
+    @apply badge;
+    background-color: #e0f2fe;
+    color: #0369a1;
+  }
+
+  .badge-green {
+    @apply badge;
+    background-color: #dcfce7;
+    color: #15803d;
+  }
+
+  .badge-amber {
+    @apply badge;
+    background-color: #fef3c7;
+    color: #b45309;
+  }
+
+  .stat-card {
+    @apply glass-card p-4 flex flex-col gap-1;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold text-slate-400 uppercase tracking-widest mb-3;
+  }
+}
+
+/* Cytoscape canvas */
+#cy-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Loading shimmer */
+.shimmer {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Pulse dot */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse-ring 1.5s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+  70%  { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* Node highlight animation */
+@keyframes node-highlight {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Path draw animation */
+@keyframes dash-animate {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Table row hover */
+.table-row-hover:hover {
+  background: rgba(14, 165, 233, 0.04);
+  transition: background 0.15s;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply absolute z-50 bg-slate-900 text-white text-xs px-2 py-1 rounded-lg
+         pointer-events-none opacity-0 transition-opacity duration-150 whitespace-nowrap;
+}
+.tooltip-trigger:hover .tooltip { @apply opacity-100; }

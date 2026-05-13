@@ -1,0 +1,47 @@
+{
+  "name": "Sample City Map",
+  "description": "12-node city graph with realistic road distances in kilometers",
+  "nodes": [
+    { "id": "A", "label": "City Center",   "x": 400, "y": 300 },
+    { "id": "B", "label": "North Station", "x": 400, "y": 100 },
+    { "id": "C", "label": "East Mall",     "x": 620, "y": 200 },
+    { "id": "D", "label": "West Park",     "x": 180, "y": 200 },
+    { "id": "E", "label": "South Harbor",  "x": 400, "y": 500 },
+    { "id": "F", "label": "Airport",       "x": 700, "y": 400 },
+    { "id": "G", "label": "University",    "x": 200, "y": 420 },
+    { "id": "H", "label": "Tech Hub",      "x": 580, "y": 350 },
+    { "id": "I", "label": "Old Town",      "x": 280, "y": 150 },
+    { "id": "J", "label": "Stadium",       "x": 550, "y": 480 },
+    { "id": "K", "label": "Hospital",      "x": 160, "y": 340 },
+    { "id": "L", "label": "Beach Resort",  "x": 640, "y": 530 }
+  ],
+  "edges": [
+    { "from": "A", "to": "B", "weight": 5,  "road": "Main Avenue N" },
+    { "from": "A", "to": "C", "weight": 8,  "road": "East Expressway" },
+    { "from": "A", "to": "D", "weight": 6,  "road": "West Boulevard" },
+    { "from": "A", "to": "E", "weight": 7,  "road": "South Parkway" },
+    { "from": "A", "to": "H", "weight": 9,  "road": "Tech Corridor" },
+    { "from": "B", "to": "C", "weight": 6,  "road": "Northeast Link" },
+    { "from": "B", "to": "I", "weight": 4,  "road": "Heritage Road" },
+    { "from": "C", "to": "F", "weight": 5,  "road": "Airport Highway" },
+    { "from": "C", "to": "H", "weight": 4,  "road": "Innovation Drive" },
+    { "from": "D", "to": "I", "weight": 3,  "road": "Old Town Path" },
+    { "from": "D", "to": "K", "weight": 5,  "road": "Medical Lane" },
+    { "from": "D", "to": "G", "weight": 7,  "road": "Campus Road" },
+    { "from": "E", "to": "G", "weight": 6,  "road": "Harbor View" },
+    { "from": "E", "to": "J", "weight": 5,  "road": "Stadium Drive" },
+    { "from": "F", "to": "H", "weight": 3,  "road": "Runway Link" },
+    { "from": "F", "to": "L", "weight": 4,  "road": "Coastal Highway" },
+    { "from": "G", "to": "K", "weight": 4,  "road": "Health Street" },
+    { "from": "H", "to": "J", "weight": 6,  "road": "Sports Avenue" },
+    { "from": "I", "to": "A", "weight": 7,  "road": "Center Route" },
+    { "from": "J", "to": "L", "weight": 3,  "road": "Beach Road" },
+    { "from": "K", "to": "E", "weight": 8,  "road": "Harbor Lane" }
+  ],
+  "known_shortest_paths": {
+    "A_to_F": { "path": ["A", "H", "F"], "distance": 12 },
+    "A_to_L": { "path": ["A", "H", "F", "L"], "distance": 16 },
+    "D_to_F": { "path": ["D", "I", "A", "H", "F"], "distance": 22 },
+    "B_to_E": { "path": ["B", "A", "E"], "distance": 12 }
+  }
+}
