@@ -270,9 +270,5 @@ The preloaded map contains **12 nodes** representing a realistic city:
 
 ---
 
-## 📄 License
-
-
----
 
 *Built with ❤️ using React, Flask, and Dijkstra's genius.*
