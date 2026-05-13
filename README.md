@@ -272,7 +272,6 @@ The preloaded map contains **12 nodes** representing a realistic city:
 
 ## 📄 License
 
-MIT License — free to use, modify, and distribute.
 
 ---
 
