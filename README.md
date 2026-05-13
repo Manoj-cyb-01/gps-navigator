@@ -269,6 +269,10 @@ The preloaded map contains **12 nodes** representing a realistic city:
 | UI/UX Design | Design Team |
 
 ---
+## License
 
+This project is licensed under the Apache License 2.0.
 
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
+---
 *Built with ❤️ using React, Flask, and Dijkstra's genius.*
